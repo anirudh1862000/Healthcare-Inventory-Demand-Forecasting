@@ -1,49 +1,61 @@
-# Supply Chain in Healthcare
+# Healthcare Inventory & Demand Forecasting
 
-## Project Overview
-This project analyzes hospital operations data across inventory, patient flow, staffing, and finance, then builds a model to predict inventory demand.
+A healthcare operations analytics project exploring inventory availability, patient flow, staffing, and financial patterns, with a machine-learning workflow to estimate inventory demand.
 
-Notebook: `supply-chain-in-healthcare.ipynb`
+> **Portfolio focus:** exploratory data analysis, feature engineering, operational metrics, and predictive modeling using Python.
 
-## Datasets
-The notebook loads four datasets:
-- `/kaggle/input/hospital-supply-chain/inventory_data.csv`
-- `/kaggle/input/hospital-supply-chain/patient_data.csv`
-- `/kaggle/input/hospital-supply-chain/staff_data.csv`
-- `/kaggle/input/hospital-supply-chain/financial_data.csv`
+## Business Problem
 
-## Analysis Scope
-- Data quality and structure summaries for each table
-- Date normalization and combined dataframe creation
-- Operational visualizations:
-  - Stock vs min/max capacity
-  - Staffing worked vs overtime
-  - Expense category breakdown
-  - Diagnosis vs procedures
-  - Correlation heatmap (bed days, stock, capacity)
-  - Inventory valuation and patient stay analysis
-- Feature engineering for supply planning:
-  - `Inventory_Shortfall`
-  - `Replenishment_Needs`
-- One-hot encoding for categorical variables
-- Demand prediction with `GradientBoostingRegressor`
+Healthcare teams need to balance stock availability with demand while monitoring staffing and operating costs. This project brings several operational datasets into an analytical workflow to explore potential inventory shortfalls and replenishment needs.
 
-## Tech Stack
-- Python
-- Pandas
-- Matplotlib
-- Seaborn
-- scikit-learn
+## Questions Explored
 
-## How to Run
-1. Open `supply-chain-in-healthcare.ipynb`.
-2. Install dependencies:
-   - `pandas`
-   - `matplotlib`
-   - `seaborn`
-   - `scikit-learn`
-3. Update dataset paths if running outside Kaggle.
-4. Execute all cells sequentially.
+- How does inventory compare with minimum and maximum capacity?
+- Where might inventory shortfalls or replenishment needs emerge?
+- How do staffing hours and overtime vary?
+- What patterns appear in expense categories, patient stays, and procedures?
+- Which operational variables may be useful for demand forecasting?
 
-## Key Outcome
-The notebook provides both operational insights and a predictive demand model that supports better inventory planning in hospital environments.
+## Workflow
+
+1. **Inspect and prepare data** — review data structures, normalize dates, and combine relevant datasets.
+2. **Explore operations** — visualize inventory and capacity, staffing and overtime, expenses, diagnoses and procedures, and patient-stay patterns.
+3. **Engineer features** — derive inventory shortfall and replenishment-related fields.
+4. **Model demand** — encode categorical variables and build a `GradientBoostingRegressor` workflow.
+5. **Review outputs** — use visual analysis and model evaluation to support further investigation.
+
+## Tools & Skills
+
+- **Python:** Pandas, NumPy
+- **Visualization:** Matplotlib, Seaborn
+- **Machine learning:** scikit-learn, Gradient Boosting
+- **Analytics:** data cleaning, exploratory data analysis (EDA), feature engineering, operational KPI exploration
+
+## Repository Contents
+
+- `supply-chain-in-healthcare.ipynb` — analysis and modeling notebook
+
+## Run the Project
+
+1. Clone or download this repository.
+2. Open the notebook in Jupyter or Google Colab.
+3. Install the packages used in the notebook: `pandas`, `numpy`, `matplotlib`, `seaborn`, and `scikit-learn`.
+4. Update the input file paths to match your environment.
+5. Run the notebook from top to bottom.
+
+The notebook references Kaggle input files under `/kaggle/input/hospital-supply-chain/` for inventory, patient, staffing, and financial data. Obtain the source dataset and adjust the paths before running locally.
+
+## Notes & Limitations
+
+- Forecast quality depends on data quality, target definition, feature selection, and validation design.
+- Treat model outputs as analytical estimates, not clinical recommendations.
+- Review validation results in the notebook before using any prediction operationally.
+
+## Next Improvements
+
+- Add a reproducible train/validation split and baseline comparison.
+- Report suitable regression metrics such as MAE and RMSE.
+- Add a data dictionary and a concise summary of validated findings.
+
+---
+Created as a portfolio project to demonstrate a structured approach to healthcare operations and inventory analytics.
